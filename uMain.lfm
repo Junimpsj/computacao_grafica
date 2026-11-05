@@ -1,0 +1,10 @@
+object frmMain: TfrmMain
+  Left = 100
+  Height = 780
+  Top = 100
+  Width = 960
+  Caption = 'frmMain'
+  ClientHeight = 780
+  ClientWidth = 960
+  Position = poScreenCenter
+end

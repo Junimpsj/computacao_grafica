@@ -1,0 +1,8 @@
+object frmCasinha: TfrmCasinha
+  Left = 0
+  Height = 480
+  Top = 0
+  Width = 640
+  ClientHeight = 480
+  ClientWidth = 640
+end
