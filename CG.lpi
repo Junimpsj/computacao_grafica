@@ -14,12 +14,12 @@
       <ResourceType Value="res"/>
     </General>
     <BuildModes>
-      <Item Name="Linux" Default="True"/>
-      <Item Name="Windows64">
+      <Item Name="Windows64" Default="True"/>
+      <Item Name="Linux">
         <CompilerOptions>
           <Version Value="11"/>
           <Target>
-            <Filename Value="bin/win64/CG"/>
+            <Filename Value="bin/linux/CG"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
@@ -28,26 +28,16 @@
           </SearchPaths>
           <CodeGeneration>
             <TargetCPU Value="x86_64"/>
-            <TargetOS Value="win64"/>
+            <TargetOS Value="linux"/>
             <Optimizations>
               <OptimizationLevel Value="2"/>
             </Optimizations>
           </CodeGeneration>
           <Linking>
             <Debugging>
-              <GenerateDebugInfo Value="False"/>
-              <UseExternalDbgSyms Value="False"/>
+              <DebugInfoType Value="dsDwarf3"/>
             </Debugging>
-            <LinkSmart Value="True"/>
-            <Options>
-              <Win32>
-                <GraphicApplication Value="True"/>
-              </Win32>
-            </Options>
           </Linking>
-          <Other>
-            <CustomOptions Value="-WG"/>
-          </Other>
         </CompilerOptions>
       </Item>
       <SharedMatrixOptions Count="2">
@@ -76,7 +66,7 @@
   <CompilerOptions>
     <Version Value="11"/>
     <Target>
-      <Filename Value="bin/linux/CG"/>
+      <Filename Value="bin/win64/CG"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
@@ -84,14 +74,26 @@
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <CodeGeneration>
+      <TargetCPU Value="x86_64"/>
+      <TargetOS Value="win64"/>
       <Optimizations>
         <OptimizationLevel Value="2"/>
       </Optimizations>
     </CodeGeneration>
     <Linking>
       <Debugging>
-        <DebugInfoType Value="dsDwarf3"/>
+        <GenerateDebugInfo Value="False"/>
+        <UseExternalDbgSyms Value="False"/>
       </Debugging>
+      <LinkSmart Value="True"/>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
     </Linking>
+    <Other>
+      <CustomOptions Value="-WG"/>
+    </Other>
   </CompilerOptions>
 </CONFIG>
